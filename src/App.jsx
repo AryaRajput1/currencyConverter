@@ -9,19 +9,15 @@ function App() {
   const [toType, setToType] = useState('usd')
   const data = userCurrencyList(toType)
   const onFromCurrecyChange = (curr)=>{
-    console.log('lll')
     setFrom(curr)
   }
   const onFromCurrecyTypeChange = (curr)=>{
-    console.log('lll')
     setFromType(curr)
   }
   const onToCurrecyChange = (curr)=>{
-    console.log('lll')
     setTo(curr)
   }
   const onToCurrecyTypeChange = (curr)=>{
-    console.log('lll')
     setToType(curr)
   }
   const onSwapClick = ()=>{
@@ -31,7 +27,6 @@ function App() {
     setToType(fromType)
   }
   const onConverClick = ()=>{
-    console.log(data)
     setTo(from * data[fromType])
   }
 
@@ -43,7 +38,7 @@ function App() {
     <h1 className="text-xl font-bold text-blue-900">Currency  Converter</h1>
     <div className="w-24 rounded-r-xl h-1 bg-blue-900"></div>
     </div>
-    <div className="flex rounded-md flex-col md:flex-row bg-white">
+    <div className="flex rounded-md flex-col md:flex-row bg-white items-center">
       <img src="https://img.freepik.com/free-vector/currency-exchange-service-monetary-transfer-changing-dollar-euro-buying-selling-foreign-money-golden-coins-with-eu-us-currency-symbols-vector-isolated-concept-metaphor-illustration_335657-2818.jpg?w=2000" className="w-72 h-72 object-contain"/>
       <div className=" flex flex-col justify-around items-center space-y-4">
         <InputBox title="From" optionsList={Object.keys(data)} amount={from} onCurrencyChange={onFromCurrecyChange} onCurrencyTypeChange={onFromCurrecyTypeChange} selectCurrency={fromType} isDisabled={false}/>
